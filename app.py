@@ -114,3 +114,19 @@ with onglets[4]:
     st.dataframe(top, hide_index=True)
     st.write(f"Le plus gros relevé : {top.iloc[0]['quartier']} en "
              f"{top.iloc[0]['mois']} ({top.iloc[0]['kwh']:,} kWh).")
+
+
+st.markdown("## Conclusion")
+st.markdown(
+    "Monsieur le Directeur, la consommation électrique ne suit pas la chaleur"
+    " (corrélation de -0,15) mais dépend fortement des heures de courant"
+    " disponibles (corrélation de 0,76). Les abonnés consomment donc par"
+    " opportunité dès que l'électricité est rétablie, plutôt qu'en fonction"
+    " des variations de température extérieure. Néanmoins, rappelez-vous"
+    " qu'une forte corrélation statistique met en évidence une tendance"
+    " forte, mais elle ne prouve pas formellement un lien de cause à effet"
+    " absolu"
+)
+
+with st.expander("Voir les données filtrées"):
+  st.dataframe(filtre, hide_index=True)
